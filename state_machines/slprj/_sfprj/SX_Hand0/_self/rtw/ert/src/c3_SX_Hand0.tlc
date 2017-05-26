@@ -1,0 +1,54 @@
+%implements "chartSource" "C"
+%function ChartConfig(block, system) void
+  %createrecord chartConfiguration { ...
+          executeAtInitialization  0 ...
+  }
+  %return chartConfiguration
+%endfunction
+%function ChartDataMap(block, system) void
+  %createrecord ChartDataElements {\
+    NumChartData   6 \
+    ChartDataDefaults {\
+      RecordType   "ChartData"\
+      Dimensions   []\
+      IsTestPoint  0\
+    }\
+    ChartData {\
+      Name         "is_active_c3_SX_Hand0"\
+      Description  "StateIsActive"\
+      SFName       ""\
+      Path         ""\
+    }\
+    ChartData {\
+      Name         "is_Chord_change_control"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "Chord_change_control"\
+    }\
+    ChartData {\
+      Name         "is_active_Chord_change_control"\
+      Description  "StateIsActive"\
+      SFName       ""\
+      Path         "Chord_change_control"\
+    }\
+    ChartData {\
+      Name         "is_Alterations_control"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "Alterations_control"\
+    }\
+    ChartData {\
+      Name         "is_active_Alterations_control"\
+      Description  "StateIsActive"\
+      SFName       ""\
+      Path         "Alterations_control"\
+    }\
+    ChartData {\
+      Name         "is_playing_mode"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "Chord_change_control.playing_mode"\
+    }\
+  }
+  %return ChartDataElements
+%endfunction

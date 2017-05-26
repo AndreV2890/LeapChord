@@ -1,0 +1,48 @@
+%implements "chartSource" "C"
+%function ChartConfig(block, system) void
+  %createrecord chartConfiguration { ...
+          executeAtInitialization  0 ...
+  }
+  %return chartConfiguration
+%endfunction
+%function ChartDataMap(block, system) void
+  %createrecord ChartDataElements {\
+    NumChartData   5 \
+    ChartDataDefaults {\
+      RecordType   "ChartData"\
+      Dimensions   []\
+      IsTestPoint  0\
+    }\
+    ChartData {\
+      Name         "is_active_c3_DX_Hand_Fingers"\
+      Description  "StateIsActive"\
+      SFName       ""\
+      Path         ""\
+    }\
+    ChartData {\
+      Name         "is_Basic_Logic"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "Basic_Logic"\
+    }\
+    ChartData {\
+      Name         "is_active_Basic_Logic"\
+      Description  "StateIsActive"\
+      SFName       ""\
+      Path         "Basic_Logic"\
+    }\
+    ChartData {\
+      Name         "is_playing_mode"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "Basic_Logic.playing_mode"\
+    }\
+    ChartData {\
+      Name         "control_number"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "control_number"\
+    }\
+  }
+  %return ChartDataElements
+%endfunction
